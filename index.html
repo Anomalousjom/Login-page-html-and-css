@@ -1,0 +1,51 @@
+<!-- Link to the external CSS file for form styling -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Form container -->
+<form class="form">
+
+    <!-- Email input field -->
+    <span class="input-span">
+      <!-- Label for email input -->
+      <label for="email" class="label">Email</label>
+      <!-- Email input with placeholder text and "required" validation -->
+      <input 
+        type="email" 
+        name="email" 
+        id="email"
+        placeholder="Email Address"
+        required
+      />
+    </span>
+
+    <!-- Password input field -->
+    <span class="input-span">
+      <!-- Label for password input -->
+      <label for="password" class="label">Password</label>
+      <!-- Password input with minimum length requirement and "required" validation -->
+      <input 
+        type="text" 
+        name="password" 
+        id="password"
+        placeholder="Password"
+        minlength="8"
+        required
+      />
+      <!-- Password requirement note below input -->
+      <p>Password must be at least 8 characters</p>
+    </span>
+
+    <!-- "Forgot password" link -->
+    <span class="span">
+      <a href="#">Forgot password?</a>
+    </span>
+
+    <!-- Submit button to log in -->
+    <button type="submit">Log in</button>
+
+    <!-- Sign-up link for users without an account -->
+    <span class="span">
+      Don't have an account? <a href="#">Sign up</a>
+    </span>
+
+</form>

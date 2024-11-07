@@ -1,0 +1,163 @@
+/* 
+  Basic layout for the body to center content both horizontally and vertically,
+  covering the full viewport height with no default margins.
+*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+/* 
+  Form container styling:
+  Centers content, applies a column layout, and ensures a responsive width.
+*/
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Space between form elements */
+    width: 100%;
+    max-width: 300px; /* Keeps form compact on larger screens */
+}
+  
+/* 
+  Wrapper for each label-input pair.
+  Aligns label above input for a clear, accessible layout.
+*/
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* 
+  Common styling for email and password inputs:
+  Adds padding, rounded corners, and distinct border styling.
+*/
+.form input[type="email"],
+.form input[type="text"] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: 4px solid #5865bc; /* Defines primary border color */
+    background-color: #ffffff;
+}
+
+/* 
+  Invalid input styling:
+  Red border and error icon appear only when input is invalid and not empty.
+*/
+.form input:invalid:not(:placeholder-shown) {
+    border-color: rgb(255, 70, 70);
+    background-image: url(red_x.png);
+}
+
+/* 
+  Valid input styling:
+  Green border and success icon appear only when input is valid and not empty.
+*/
+.form input:valid:not(:placeholder-shown) {
+    border-color: rgb(119, 255, 169);
+    background-image: url(green_chk.png);
+}
+
+/* 
+  Shared icon styling for both valid and invalid states:
+  Positions the icon on the far right of the input.
+*/
+.form input:valid:not(:placeholder-shown),
+input:invalid:not(:placeholder-shown) {
+    background-repeat: no-repeat;
+    background-size: 20px 20px; /* Sets icon size to 20x20px */
+    background-position: calc(100% - 10px); /* Positions icon to the right */
+}
+
+/* 
+  Password requirement message:
+  Displays red message below the input when validation fails.
+*/
+.form input:invalid + p { 
+    color: #f90303;
+    margin: 0;
+    margin-left: 10px;
+}
+
+/* 
+  Hides validation message when input is valid or placeholder text is shown.
+*/
+.form input:valid + p, 
+.form input:placeholder-shown + p { 
+    display: none;
+}
+
+/* 
+  Label styling:
+  Aligns label to the left with a bold and distinct color for readability.
+*/
+.label {
+    align-self: flex-start;
+    color: #5865bc;
+    font-weight: 600;
+}
+
+/* 
+  Button styling:
+  Provides padding, rounded corners, and visual feedback on hover and click.
+*/
+button {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: #5865bc;
+    border: 3px solid #7d86c1; /* Subtle border for button */
+    color: #efefef;
+    cursor: pointer;
+    transition: all 300ms; /* Smooth transition for hover effect */
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* 
+  Hover effect for button:
+  Scales down slightly to indicate interactivity.
+*/
+button:hover {
+    scale: 0.95;
+}
+
+/* 
+  Active button styling:
+  Adjusts background, border, and text colors for clear click feedback.
+*/
+button:active {
+    scale: 1;
+    border-color: #555b87;
+    background-color: #434d8f;
+    color: #ffffff;
+}
+
+/* 
+  Styling for .span text elements:
+  Sets default color and underlines nested links for emphasis.
+*/
+.span {
+    text-decoration: none;
+    color: #aeace6;
+}
+
+/* 
+  Link color within .span elements:
+  Darker purple for better contrast against the lighter .span color.
+*/
+.span a {
+    color: #5865bc;
+}
